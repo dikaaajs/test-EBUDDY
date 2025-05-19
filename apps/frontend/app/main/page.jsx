@@ -33,6 +33,8 @@ export default function Main() {
     fetchData();
   }, [user]);
 
+  console.log(userData);
+
   if (loading || isLoading) {
     return <Loading />;
   }
@@ -43,7 +45,11 @@ export default function Main() {
         <Typography variant="h2">
           Hi, Welcome back {userData.name} 👋
         </Typography>
-        <Button variant="contained" loading={loading}>
+        <Button
+          variant="contained"
+          className="text-white bg-black/50"
+          loading={loading}
+        >
           Edit
         </Button>
       </div>

@@ -39,11 +39,15 @@ export const registerUser = async (
       body: JSON.stringify({ email, password, name }),
     });
 
+    const res = await response.json();
+
     if (!response.ok) {
-      throw new Error(`Register failed: ${response.statusText}`);
+      throw new Error(`${res.error}`);
     }
-    return await response.json();
+
+    return await res;
   } catch (error: any) {
+    console.log(error);
     throw new Error(error.message);
   }
 };

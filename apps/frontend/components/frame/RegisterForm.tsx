@@ -23,8 +23,7 @@ const RegisterForm: React.FC = () => {
       router.push("/auth/login");
       toast.success("Register Success");
     } catch (err: any) {
-      toast.error(`Register Error : ${err}`);
-      console.log(err);
+      toast.error(`${err}`);
     } finally {
       setLoading(false);
     }
